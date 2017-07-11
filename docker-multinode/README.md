@@ -64,7 +64,7 @@ The first step in the process is to initialize the master node.
 Clone the `kube-deploy` repo, and run [master.sh](master.sh) on the master machine _with root_:
 
 ```console
-$ git clone https://github.com/kubernetes/kube-deploy
+$ git clone https://github.com/huanpc/kube-deploy.git
 $ cd kube-deploy/docker-multinode
 $ ./master.sh
 ```
@@ -81,7 +81,7 @@ Once your master is up and running you can add one or more workers on different 
 Clone the `kube-deploy` repo, and run [worker.sh](worker.sh) on the worker machine _with root_:
 
 ```console
-$ git clone https://github.com/kubernetes/kube-deploy
+$ git clone https://github.com/huanpc/kube-deploy.git
 $ cd kube-deploy/docker-multinode
 $ export MASTER_IP=${SOME_IP}
 $ ./worker.sh
@@ -93,8 +93,8 @@ Then, the main docker daemon is restarted and lastly `kubelet` is launched as a 
 ## Get kubectl
 
 ```
-curl -sSL https://storage.googleapis.com/kubernetes-release/release/v[KUBECTL_VERSION]/bin/linux/amd64/kubectl > /usr/local/bin/kubectl
-chmod +x /usr/local/bin/kubectl
+$ curl -Lo /usr/local/bin/kubectl http://storage.googleapis.com/kubernetes-release/release/v1.3.6/bin/linux/amd64/kubectl
+$ chmod +x /usr/local/bin/kubectl
 ```
 
 ## Addons
